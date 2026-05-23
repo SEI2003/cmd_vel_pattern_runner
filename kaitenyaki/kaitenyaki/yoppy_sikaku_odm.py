@@ -20,9 +20,9 @@ class SquareNode(Node):
         self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
 
         # パラメータ
-        self.side_length   = 1.0   # 辺の長さ (m)
-        self.linear_speed  = 0.2   # 直進速度 (m/s)
-        self.angular_speed = 1.57  # 回転速度 (rad/s)
+        self.side_length   = 5.0   # 辺の長さ (m)
+        self.linear_speed  = 1.0   # 直進速度 (m/s)
+        self.angular_speed = 0.5  # 回転速度 (rad/s)
         self.turn_thresh   = 0.15  # 回転完了の許容誤差 (rad) ≒ 1度
         self.dist_thresh   = 0.02  # 直進完了の許容誤差 (m)
         self.total_sides   = 4     # 正方形の辺数
