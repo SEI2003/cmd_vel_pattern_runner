@@ -43,13 +43,13 @@ class SquareOdom(Node):
         self.odom_ready = False # オドメトリが届いたかを判定するためのフラグ
 
         # 前進速度 [m/s]
-        self.linear_speed = 0.2
+        self.linear_speed = 0.5
         # 直線距離 [m]
         self.straight_distance = 0.5
         # 曲がる角度 [rad]（90度）
         self.turn_angle = math.pi/2
         # 曲率半径 [m]
-        self.curve_radius = 0.05
+        self.curve_radius = 0.5
         # ※ タイマーは廃止しました
 
     # odomを受信する関数
@@ -118,9 +118,9 @@ class SquareOdom(Node):
         start_yaw = self.current_yaw
 
         # ① 曲率半径を大きくして角速度を下げる（例: 0.3m）
-        curve_radius = 0.3
-        curve_angular = self.linear_speed / curve_radius  # = 0.67 rad/s
-
+        curve_radius = 0.5
+        #curve_angular = self.linear_speed / curve_radius  # = 0.67 rad/s
+        curve_angular = 0.157
         # ② 手前で止まるためのしきい値を設ける
         threshold = 0.1  # rad（約6度の余裕）
 
